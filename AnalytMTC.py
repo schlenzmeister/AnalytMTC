@@ -92,12 +92,11 @@ class AnalytMTC(object):
             
   
     # get data as splitted string -> set to @
-    def getData(self):    
-        self.Com.sendCommand(cmd=self.UnitID, loop=False, cr=False, delay=0.25)       
-        #self._sendCommand(self.UnitID)
+    def getData(self):          
+        self._sendCommand(self.UnitID)
         time.sleep(0.1)
-        #return self._sendCommand(self.UnitID).split(" ")
-        return self.Com.sendCommand(cmd=self.UnitID, loop=False, cr=False, delay=0.25).split(" ")
+        return self._sendCommand(self.UnitID).split(" ")
+
         
     
     # get atmospheric pressure [mBar] 
